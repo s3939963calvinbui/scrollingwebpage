@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:  serif;
+    overflow-x: hidden;
+}
+.container{
+    max-width: 1400px;
+    padding: 20px 30px;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+/* Header start here */
+header{
+    background-image: url(../Photos/headingphoto.JPG);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    margin-bottom: 100px;
+}
+.navbar{
+    display: flex;
+    gap: 30px;
+}
+.navbar a{
+    color: #000;
+    font-size: 40px;
+    font-weight: 500;
+    transition: 250ms;
+}
+.navbar a:hover{
+    transform: translateY(-4px);
+}
+.desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: #fff;
+    margin-top: 300px;
+    animation: fadeIn 1000ms linear 250ms forwards 1;
+}
+@keyframes fadeIn {
+    0% {
+       opacity: 0;
+       transform: translateY(400px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ } 
+/* Circle image Css */
+.circle{
+    width: 20%;
+    position: absolute;
+    top: 80%;
+    left: 20px;
+    
+}
+.circle img{
+    width: 100%;
+}
+/* Leaves Section */
+/* I have decided to leave some leaves still, this is to prevent too much motion which can make the webpage looks chaotic */
+.large{
+    width: 200px;
+    position: absolute;
+    left: 10px;
+    top: 20%;
+}
+.large img{
+    width: 100%;
+}
+.large-2{
+    width: 200px;
+    position: absolute;
+    right: 10px;
+}
+.small{
+    width: 150px;
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    left: 20%;
+    transform: rotate(45deg);
+}
+.small img{
+    width: 100%;
+}
+.small-2{
+    width: 150px;
+    position: absolute;
+    z-index: 1;
+    bottom: -50px;
+    right: 40%;
+    transform: rotate(-45deg);
+}
+.small-2 img{
+    width: 100%;
+}
+/* Images section */
+.left{
+    margin: 60px auto;
+    padding: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.left .image-1{
+    width: 50%;
+}
+.left .image-1 img{
+    width: 100%;
+    
+    border: 8px solid #000;
+}
+.left .image-2{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    right: 200px;
+}
+.left .image-2 img{
+    width: 100%;
+    border: 8px solid #000;
+}
+.right{
+    margin: 60px auto;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+}
+.right .image-3{
+    width: 50%;
+    position: absolute;
+    left: -150px;
+    top: 30%;
+}
+.right .image-3 img{
+    width: 100%;
+    border: 8px solid #000;
+}
+.right .image-4{
+    width: 30%;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 20%;
+}
+.right .image-4 img{
+    width: 100%;
+    border: 8px solid #000;
+}
+.right .image-5{
+    width: 60%;
+    position: absolute;
+    z-index: 2;
+    right: -500px;
+    top: 10%;
+}
+.right .image-5 img{
+    width: 100%;
+    border: 8px solid #000;
+}
+.right .leaf-1{
+    position: absolute;
+    z-index: 3;
+    top: 10%;
+}
+.right .leaf-2{
+    position: absolute;
+    z-index: 5;
+    top: 75%;
+    left: 60%;
+}
+.right .small{
+    position: absolute;
+    top: 48%;
+    left: 38%;
+    z-index: 6;
+    transform: rotate(-45deg);
+}
+.mid{
+    margin: 60px auto;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    position: relative;
+}
+.mid .image-6{
+    width: 50%;
+    position: absolute;
+    left: 40%;
+    top: 20%;
+}
+.mid .image-6 img{
+    width: 100%;
+    border: 8px solid #000;
+}
+.mid .image-7{
+    width: 30%;
+    position: absolute;
+    z-index: 2;
+    left: 20%; 
+    top: 60%;
+}
+.mid .image-7 img{
+    width: 100%;
+    border: 8px solid #000;
+    object-fit: cover;
+    background-position: center;
+}
+.mid .leaf-2{
+    width: 20%;
+    transform: rotate(45deg);
+}
+/* Footer */
+footer{
+    border: 8px solid #000;
+    height: 40vh;
+    width: 100%;
+    background-image: url(../Photos/DSC_0183.JPG);
+    background-position: center;
+    object-fit: cover;
+    background-size: cover;
+    margin-top: 200px;
+    position: relative;
+}
+.circle-2{
+    width: 20%;
+    position: absolute;
+    top: -200px;
+    right: 100px;
+}
+.circle-2 img{
+    width: 100%;   
+}
+/* Preloader */
+#pre-loader{
+    background: #000;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pre-loader .leaves{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pre-loader .leaves img{
+    width: 100%;
+}
+/* Animation for preloader */
+.l-5{
+    animation: opaci 1000ms linear 500ms 3 forwards;
+}
+.l-4{
+    animation: opac 700ms linear 500ms infinite forwards ;
+}
+.l-3{
+    animation: opa 600ms infinite;
+}
+.l-2{
+    animation: op 500ms infinite ;
+}
+@keyframes op {
+    from{
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(4px);
+    }
+}
+@keyframes opa {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes opac {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes opaci {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+/* Context page */
+.context{
+    height: 100vh;
+    margin-top: 100px;
+}
+.context .container{
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+.flex-1, .flex-2{
+    flex: 1;
+    position: relative;
+}
+.flex-1 .text{
+    width: 100%;
+    font-size: 24px;
+}
+.flex-2 .image{
+    width: 100%;
+}
+.flex-2 .image img{
+    width: 100%;
+    border: 8px solid #000;
+    cursor: pointer;
+}
+.flex-2 .image-2,.flex-2 .image-3,.flex-2 {
+    width: 40%;
+}
+.flex-2 .image-2 img,.flex-2 .image-3 img,.flex-2 img{
+    width: 100%;
+    border: 5px solid #000;
+    cursor: pointer;
+}
+.flex-2 .image-2{
+    position: absolute;
+    top: -100px;
+    left: -50px;
+}
+.flex-2 .image-3{
+    position: absolute;
+    top: 100px;
+    right: -60px;
+}
+.flex-2 .image-4{
+    position: absolute;
+    top: 80%;
+    left: 60px;
+}
+.flex-1 .c-small{
+    position: absolute;
+    width: 50%;
+    top: -40px;
+    left: -70px;
+    transform: rotate(45deg);
+}
+.flex-1 .c-small img{
+    width: 100%;
+}
+.flex-1 .c1-small{
+    position: absolute;
+    width: 30%;
+    top: 25%;
+    left: 60%;
+    z-index: 1;
+
+    rotate: 30deg;
+}
+.flex-1 .c1-small img{
+    width: 100%;
+}
+.text{
+    text-align: justify;
+}
+
+.text2{
+    text-align: justify;
+    font-size: 24px;
+    padding-top: 20px;
+}

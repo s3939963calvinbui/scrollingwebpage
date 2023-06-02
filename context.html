@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- pre loader -->
+     <!-- Pre-loader is added with the help of javascript. When the the page will be reloaded or the user goes to another page the preloader screen will popup -->
+    <div id="pre-loader">
+        <div class="leaves">
+            <img class="l-1" src="Icons/leaf.png" alt="">
+            <img class="l-2" src="Icons/leaf.png" alt="">
+            <img class="l-3" src="Icons/leaf.png" alt="">
+            <img class="l-4" src="Icons/leaf.png" alt="">
+            <img class="l-5" src="Icons/leaf.png" alt="">
+        </div>
+    </div>
+
+    <!-- Sounds -->
+     <!-- Three audio sounds are imported. one for the background music and other two are working as a hover effect on the different images -->
+    <audio autoplay  loop>
+        <source src="Sounds/background_loop.mp3">
+    </audio>
+    <audio class="hoverimg" src="Sounds/squeakhonk_sfx.mp3"></audio>
+    <audio class="hoverimg1" src="Sounds/bird_sfx.wav"></audio>
+    <!-- Header Starts here -->
+     <!-- Header is consisting of the navigation bar and a hero image with a welcome text -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a onmouseover="hoverplay1()" href="index.html">Home</a>
+                <a onmouseover="hoverplay1()" href="context.html">Context</a>
+            </div>
+            <div class="desc">
+                <span>Context</span>
+            </div>
+        </div>
+    </header>
+    <!-- Context section -->
+     <!-- Context section is designed for the 500 words description along with some images with absolute positionings and both text and images are aligned horizontally with Flex property of css -->
+    <section class="context">
+        <div class="container">
+            <div class="flex-1">
+                <div class="leaf c-small">
+                    <img src="Icons/leaf.png" alt="">
+                </div>
+                <div class="leaf c1-small">
+                    <img src="Icons/leaf.png" alt="">
+                </div>
+                <div class="text">
+<p>The website created under the principle of Playful/Information Design offers a captivating journey through the photos we took during the visit to the Royal Children's Hospital Melbourne - Royal Park. The RCH - Royal Park is an iconic institution dedicated to providing specialized medical care to children. Situated in the picturesque Royal Park, the hospital embraces the healing power of nature by incorporating biophilic design principles. 
+</p>
+<p>The scrolling gallery immerses visitors in a vibrant audio-visual experience that embodies the essence of playfulness. The incorporation of nature-inspired elements in the website design includes the moving leaves and ambient nature sounds. 
+As users navigate through the site, the leaves delicately move in response to their scrolling, infusing the webpage with a sense of vitality and life. This dynamic feature contributes to a sense of engagement and captivates the viewer's attention, creating an interactive and immersive experience. The rotating circles, serving as labels for the date and location of the site visit, further enhance the playful aspect of the design. These playful design elements are particularly fitting for a children's hospital, as they bring about excitement and evoke positive emotions, fostering a welcoming and comforting atmosphere.
+</p>
+<p>To complement the visual journey, a looped ambient background music plays softly in the background, creating a calming and relaxing ambiance. The soothing melodies evoke a sense of tranquility, transporting the viewer to a serene natural setting. This connection to nature is significant, as research has shown that exposure to natural elements has a positive impact on human emotions and well-being. I believe the playful features blended in perfectly with the sense of calm/relaxing nature in the background, making it playful yet soothing.
+</p>
+<p>Other features include a custom preloader with animation, the page’s title with fading/move-up animation. These create a smooth introduction into the page. The navigation bar on the top-left is also responsive with a hover-transform feature and audio feedback, providing easy access to different sections while being playful.
+</p>
+                </div>
+            </div>
+            <div class="flex-2">
+                <div onmouseover="hoverplay()" class="image">
+                    <img src="Photos/DSC_0188 (1).JPG" alt="">
+                </div>
+                <div onmouseover="hoverplay1()" class="image-2">
+                    <img src="Photos/DSC_0163.JPG" alt="">
+                </div>
+                <div onmouseover="hoverplay1()" class="image-3">
+                    <img src="Photos/DSC_0169.JPG" alt="">
+                </div>
+
+                <div class="text2">
+<p>Other features include a custom preloader with animation, the page’s title with fading/move-up animation. These create a smooth introduction into the page. The navigation bar on the top-left is also responsive with a hover-transform feature and audio feedback, providing easy access to different sections while being playful.
+</p>
+<p>Overall, the Playful/Information Design website showcasing the site visit to the Royal Children's Hospital Melbourne - Royal Park provides a delightful and immersive experience. The thoughtful inclusion of playful design elements, combined with a connection to nature, captures the spirit of the hospital and its commitment to enhancing the well-being of children. By embracing the principles of playfulness and information design, the website successfully communicates the hospital's mission while creating an enjoyable and memorable digital journey for the audiences.
+</p>
+<p>Assets used:</p>
+<a href="https://youtu.be/ttLu7ygaN6I">Background Music</a>
+<a href="https://www.pngwing.com/en/free-png-bwzyu">Leaf Icon</a>
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+      <!-- Footer section consists of the image and the circle indicating the end of the page -->
+    <footer>
+        <div class="container-2">
+            <div class="circle-2">
+                <img src="Icons/rotating_circle2.png" alt="">
+            </div>
+        </div>
+    </footer>
+<!-- Script for the rotation and translation of different elements on the page -->
+    <script>
+        const leafc = document.querySelector('.c-small');
+        const leafc1 = document.querySelector('.c1-small');
+        const circle2 = document.querySelector('.circle-2')
+
+        window.onscroll = function () { scrollRotate() };
+
+        function scrollRotate() {
+            
+            circle2.style.transform = "rotate(" + (window.pageYOffset /3) + "deg)"
+            leafc.style.transform = "translateX(" + (window.pageYOffset / -3) + "px)"
+            leafc1.style.transform = "translateX(" + (window.pageYOffset / 5) + "px)"
+           
+        
+            
+        };
+    </script>
+<!-- Script for the preloading of the page -->
+    <script>
+        const hove = document.querySelector('.hoverimg1')
+        const hove1 = document.querySelector('.hoverimg')
+        const loader = document.getElementById('pre-loader');
+
+        window.addEventListener('load', () => {
+            loader.style.display = "none";
+        });
+        function hoverplay(){
+            hove.play()
+        }
+        function hoverplay1(){
+            hove1.play()
+        }
+
+    </script>
+</body>
+
+</html>

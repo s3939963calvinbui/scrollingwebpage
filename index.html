@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Webpage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+     <!-- pre loader -->
+     <!-- Pre-loader is added with the help of javascript. When the the page will be reloaded or the user goes to another page the preloader screen will popup -->
+     <div id="pre-loader">
+        <div class="leaves">
+            <img class="l-1" src="Icons/leaf.png" alt="">
+            <img class="l-2" src="Icons/leaf.png" alt="">
+            <img class="l-3" src="Icons/leaf.png" alt="">
+            <img class="l-4" src="Icons/leaf.png" alt="">
+            <img class="l-5" src="Icons/leaf.png" alt="">
+        </div>
+    </div>
+
+    <!-- Sounds -->
+     <!-- Three audio sounds are imported. one for the background music and other two are working as a hover effect on the different images -->
+    <audio autoplay  loop>
+        <source src="Sounds/background_loop.mp3">
+    </audio>
+    <audio class="hoverimg" src="Sounds/squeakhonk_sfx.mp3"></audio>
+    <audio class="hoverimg1" src="Sounds/bird_sfx.wav"></audio>
+    <!-- Header Starts here -->
+      <!-- Header consists of the navigation bar and a hero image with a welcome text -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <a onmouseover="hoverplay1()" href="index.html">Home</a>
+                <a onmouseover="hoverplay1()" href="context.html">Context</a>
+            </div>
+            <div class="desc">
+                <span>Site Visit</span>
+            </div>
+        </div>
+    </header>
+    <!-- Rotating circle -->
+     <!-- Rotating circle is aligned on the left side of the page indicating the start of the page -->
+    <div class="circle">
+        <img class="" src="Icons/rotating_circle1.png" alt="">
+    </div>
+     
+    <!-- Images -->
+     <!-- images are aligned and positioned with the absolute positioning property -->
+    
+    
+    <div class="left">
+        <!-------- leavess -->
+         <!-- Leaves are added to beautify the look of the web pages -->
+        <div class="leaf-1 large">
+            <img class="large" src="Icons/leaf.png" alt="">
+        </div>
+        <div class="leaf-2 large-2">
+            <img class="large-2" src="Icons/leaf.png" alt="">
+        </div>
+        <div class="leaf small">
+            <img src="Icons/leaf.png" alt="">
+        </div>
+        <div onmouseover="hoverplay()" class="image-1 image">
+          <img src="Photos/DSC_0142.JPG" alt="">
+        </div>
+        <div onmouseover="hoverplay1()" class="image-2 image">
+            <img src="Photos/DSC_0150.JPG" alt="">
+        </div>
+        <div class="leaf small-2">
+            <img src="Icons/leaf.png" alt="">
+        </div>
+    </div>
+
+    <!-- more images -->
+    <div class="right">
+        <!-- leaves -->
+        <div class="leaf-1 large">
+            <img class="large-3" src="Icons/leaf.png" alt="">
+        </div>
+        <div class="leaf small">
+            <img src="Icons/leaf.png" alt="">
+        </div>
+        <div onmouseover="hoverplay1()" class="image-3 image">
+            <img src="Photos/DSC_0159.JPG" alt="">
+        </div>
+        <div onmouseover="hoverplay()" class="image-4 image">
+            <img src="Photos/DSC_0163.JPG" alt="">
+        </div>
+        <div onmouseover="hoverplay1()" class="image-5 image">
+            <img src="Photos/DSC_0169.JPG" alt="">
+        </div>
+        <div class="leaf-2 large">
+            <img class="large-4" src="Icons/leaf.png" alt="">
+        </div>
+    </div>
+
+    <div class="mid">
+        <div class="leaf-2 large">
+            <img class="large-4" src="Icons/leaf.png" alt="">
+        </div>
+        <div onmouseover="hoverplay()" class="image-6 image">
+            <img src="Photos/DSC_0174np.jpg" alt="">
+        </div>
+        <div onmouseover="hoverplay1()" class="image-7 image">
+            <img src="Photos/DSC_0179.JPG" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+      <!-- Footer section consists of the image and the circle indicating the end of the page -->
+
+    <footer>
+        <div class="container-2">
+            <div class="circle-2">
+                <img src="Icons/rotating_circle2.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+     <!-- Script for the rotation and translation of different elements on the page -->
+    <script>
+        const circle = document.querySelector('.circle')
+        const circle2 = document.querySelector('.circle-2')
+        const leaf = document.querySelector('.large')
+        const leaf2 = document.querySelector('.large-2')
+        const leaf3 = document.querySelector('.large-3')
+        const leaf4 = document.querySelector('.large-4')
+        const image = document.querySelector('.image')
+        const hove = document.querySelector('.hoverimg1')
+        const hove1 = document.querySelector('.hoverimg')
+        const desc = document.querySelector('.desc')
+        window.onscroll = function () { scrollRotate() };
+
+        function scrollRotate() {
+            circle.style.transform = "rotate(" + (window.pageYOffset / 10) + "deg)"
+            circle2.style.transform = "rotate(" + (window.pageYOffset / 1) + "deg)"
+            
+            leaf.style.transform = "rotate(" + (window.pageYOffset / 10) + "deg)"
+            leaf2.style.transform = "rotate(" + (window.pageYOffset / -10) + "deg)"
+            leaf3.style.transform = "rotate(" + (window.pageYOffset / -15) + "deg)"
+            leaf4.style.transform = "rotate(" + (window.pageYOffset / 5) + "deg)"
+            desc.style.transform = "translateY(" + (window.pageYOffset / 5) + "0px)"
+        };
+        function hoverplay(){
+            hove.play()
+        }
+        function hoverplay1(){
+            hove1.play()
+        }
+    </script>
+    <!-- Script for preloader and background music of the page -->
+    <script>
+        const loader = document.getElementById('pre-loader');
+        const play = document.getElementById('autoplay');
+
+        window.addEventListener('load', ()=>{
+            loader.style.display = "none";
+            play.autoplay = true;
+
+        });
+
+    </script>
+</body>
+
+</html>
